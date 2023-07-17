@@ -40,6 +40,13 @@ cook_weisberg(multiplemodel)
 # 4a: regression and significance
 logisticmodel <- glm(fsbully_c ~ ageinm + male + srefshare + b_schoolsize, data = Alan2021, family = binomial)
 summary(logisticmodel)
+odds_ageinm = exp(logisticmodel$coefficients[2])
+odds_male = exp(logisticmodel$coefficients[3])
+odds_srefshare = exp(logisticmodel$coefficients[4])
+odds_schoolsize = exp(logisticmodel$coefficients[5])
+# 4b: Marginal effects of continuous variable “age in months”
+library(margins)
+margins(logisticmodel)
 
 # Part 2: Randomised experiments – Simulations
 # sample size of 5000
@@ -55,6 +62,8 @@ y0 <- b0 + b1 * x1 + rnorm(N)
 # generate potential outcomes representing a positive treamtent effect that is
 # highly statistically significant
 y1 <- y0 + mean(y0) + rnorm(N)
+#t-test between the two outcome variables
+t.test(y1, y0, paired=TRUE)
 # put into dataframe
 library(magrittr)
 sim_data <- data.frame(y0, y1, x1)
