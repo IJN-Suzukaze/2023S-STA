@@ -12,7 +12,6 @@
 # Arrangements: EVV (UGlobe) Nov 2021; Marjan Nikoloski July 2023***
 library(readxl)
 library(tidyverse)
-
 Alan2021 = read_excel("./Alan2021.xlsx")
 
 # Part 1: 
