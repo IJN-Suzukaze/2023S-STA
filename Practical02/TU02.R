@@ -3,14 +3,14 @@
 ################
 
 #Load packages
-require(car) #linearHypothesis
-require(estimatr) #lm_robust and iv_robust
-require(haven) #read_dta
-require(marginaleffects) #avg_comparisons
-require(MatchIt) #matchit
-require(optmatch) #matchit
-require(sandwich) #avg_comparisons
-require(tidyverse) #tidy
+library(car) #linearHypothesis
+library(estimatr) #lm_robust and iv_robust
+library(haven) #read_dta
+library(marginaleffects) #avg_comparisons
+library(MatchIt) #matchit
+library(optmatch) #matchit
+library(sandwich) #avg_comparisons
+library(tidyverse) #tidy
 
 #Setting random seed for replicability
 set.seed(12345)
